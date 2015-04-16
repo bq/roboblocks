@@ -63,6 +63,8 @@
         LANG_ADVANCED_SERIAL_PRINTLN_TOOLTIP: 'Serieko Atakatik inprimatu lerro-jauziarekin eta orga-itzulerarekin.',
         LANG_ADVANCED_SERIAL_READ: 'Serieko Atakatik irakurri',
         LANG_ADVANCED_SERIAL_READ_TOOLTIP: 'Serieko Atakatik jasotzen diren datuak ASCII testu bezala irakurtzen ditu.',
+        LANG_ADVANCED_SERIAL_READSTRING: 'Serieko Atakatik irakurri',
+        LANG_ADVANCED_SERIAL_READSTRING_TOOLTIP: 'Serieko Atakatik jasotzen diren datuak ASCII testu bezala irakurtzen ditu.',
         LANG_ADVANCED_SERIAL_SPECIAL: 'Karaktere bereziak',
         LANG_ADVANCED_SERIAL_SPECIAL_TAB: 'Tabuladorea',
         LANG_ADVANCED_SERIAL_SPECIAL_CARRIAGE_RETURN: 'Orga-itzulera',

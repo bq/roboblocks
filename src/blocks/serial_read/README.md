@@ -1,7 +1,7 @@
 serial_read
 ==========
 
-Reads incoming serial data from serial port as human-readable ASCII text.
+Reads incoming serial data from serial port as bytes.
 
 Parameters
 ----------

@@ -4,7 +4,7 @@
 
 /**
  * serial_read code generation
- * @return {String} Code generated with block parameters
+ * @return {int} Code generated with block parameters
  */
 
 Blockly.Arduino.serial_read = function() {
