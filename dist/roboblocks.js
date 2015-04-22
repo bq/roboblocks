@@ -9519,7 +9519,9 @@
          */
         Blockly.Arduino.text = function() {
             // Text value.
-            var code = Blockly.Arduino.quote_(this.getFieldValue('TEXT'));
+            var text_value = this.getFieldValue('TEXT');
+            text_value = text_value.replace(/"/g, '\\"').replace(/'/g, '\\\'').replace(/\n/g, '\\\n');
+            var code = '"' + text_value + '"';
             return [code, Blockly.Arduino.ORDER_ATOMIC];
         };
 
