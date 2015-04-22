@@ -30,7 +30,10 @@ Blockly.Blocks.lcd_setBacklight = {
         this.setColour(RoboBlocks.LANG_COLOUR_LCD);
         this.appendDummyInput()
             .appendField(RoboBlocks.locales.getKey('LANG_LCD_SETBACKLIGHT'))
-            .appendField(new Blockly.FieldDropdown([['LOW','LOW'],['HIGH','HIGH']]),'STATE')
+            .appendField(new Blockly.FieldDropdown([[RoboBlocks.locales.getKey('LANG_ADVANCED_INOUT_DIGITAL_WRITE_HIGH') || 'HIGH', 'HIGH'],
+            [RoboBlocks.locales.getKey('LANG_ADVANCED_INOUT_DIGITAL_WRITE_LOW') || 'LOW', 'LOW']]),'STATE')
+
+            
             .appendField(RoboBlocks.locales.getKey('LANG_LCD_SETBACKLIGHT_CLOSE'));
             // .appendField(new Blockly.FieldImage('img/blocks/bqmod03.png', 208 * options.zoom, 100 * options.zoom));
 

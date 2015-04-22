@@ -66,8 +66,8 @@ Blockly.Blocks.lcd_print = {
             this.removeInput('YCOOR');
         } catch (e) {}
         if (this.getFieldValue('POS') === 'TRUE') {
-            this.appendValueInput('XCOOR').appendField('row').setAlign(Blockly.ALIGN_RIGHT);
-            this.appendValueInput('YCOOR').appendField('column').setAlign(Blockly.ALIGN_RIGHT);
+            this.appendValueInput('XCOOR').appendField(RoboBlocks.locales.getKey('LANG_LCD_ADVANCED_ROWS')).setAlign(Blockly.ALIGN_RIGHT);
+            this.appendValueInput('YCOOR').appendField(RoboBlocks.locales.getKey('LANG_LCD_ADVANCED_COLUMNS')).setAlign(Blockly.ALIGN_RIGHT);
         }
     },
     onchange: function() {
