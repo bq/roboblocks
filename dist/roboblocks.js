@@ -1,4 +1,4 @@
-/*! roboblocks - v0.2.3 - 2015-04-22
+/*! roboblocks - v0.2.3 - 2015-04-23
  * https://github.com/bq/roboblocks
  * Copyright (c) 2015 bq; Licensed  */
 
@@ -3559,10 +3559,11 @@
             var __t, __p = '',
                 __e = _.escape;
             with(obj) {
-                __p +=
+                __p += '(' +
                     __e(value_num) +
                     ',' +
-                    __e(convertion);
+                    __e(convertion) +
+                    ')';
 
             }
             return __p

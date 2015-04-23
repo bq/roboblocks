@@ -12,7 +12,7 @@
 				expect( true ).to.equal( true );
 				var bool = Blockly.Block.obtain(Blockly.mainWorkspace, 'lcd_setBacklight');
 
-				assert.equal(Blockly.Arduino.workspaceToCode(), '/***   Global variables   ***/\n\n/***   Function declaration   ***/\n\nvoid setup()\n{\n\n}\n\n\nvoid loop()\n{\n  lcd.setBacklight(LOW);\n\n}\n\n/***   Function definition   ***/\n');
+				assert.equal(Blockly.Arduino.workspaceToCode(), '/***   Global variables   ***/\n\n/***   Function declaration   ***/\n\nvoid setup()\n{\n\n}\n\n\nvoid loop()\n{\n  lcd.setBacklight(HIGH);\n\n}\n\n/***   Function definition   ***/\n');
 			});
 		});
 	});
