@@ -1,4 +1,4 @@
-/*! roboblocks - v0.2.3 - 2015-04-23
+/*! roboblocks - v0.2.3 - 2015-04-24
  * https://github.com/bq/roboblocks
  * Copyright (c) 2015 bq; Licensed  */
 
@@ -1742,10 +1742,10 @@
                 LANG_LOGIC_BOOLEAN_TOOLTIP: 'Renvoie la valeur vrai ou faux.',
                 //communication blocks:
                 LANG_CATEGORY_COMMUNICATION: 'Communication',
-                LANG_BQ_BLUETOOTH_RECEIVE: 'Bluetooth : recevoir',
+                LANG_BQ_BLUETOOTH_RECEIVE: 'Bluetooth recevoir données',
                 LANG_BQ_BLUETOOTH_RECEIVE_BLUETOOTH: 'Bluetooth',
                 LANG_BQ_BLUETOOTH_RECEIVE_TOOLTIP: 'Renvoie les données reçues par le module Bluetooth',
-                LANG_BQ_BLUETOOTH_SEND: 'Bluetooth : envoyer',
+                LANG_BQ_BLUETOOTH_SEND: 'Bluetooth envoyer données',
                 LANG_BQ_BLUETOOTH_SEND_SEND: 'Envoyer',
                 LANG_BQ_BLUETOOTH_SEND_TOOLTIP: 'Envoie les données via le module Bluetooth',
                 LANG_BQ_BLUETOOTH_DEF: 'Définition du Bluetooth',
@@ -1797,7 +1797,7 @@
                 LANG_BQ_JOYSTICK: 'Joystick',
                 LANG_BQ_JOYSTICK_PIN_X: 'Axe X BROCHE#',
                 LANG_BQ_JOYSTICK_PIN_Y: 'Axe Y BROCHE#',
-                LANG_BQ_JOYSTICK_PIN_BUTTON: 'Bouton-poussoir BROCHE#',
+                LANG_BQ_JOYSTICK_PIN_BUTTON: 'Manette BROCHE#',
                 LANG_BQ_JOYSTICK_POSITION: 'Position du joystick',
                 LANG_BQ_JOYSTICK_TOOLTIP: 'Joystick',
                 LANG_BQ_LED: 'LED',
@@ -1845,7 +1845,7 @@
                 LANG_LCD_PRINT_POSITION: 'Définir la position du texte ?',
                 LANG_LCD_PRINT_TOOLTIP: 'Affiche une chaîne de caractères sur l’écran LCD à l’endroit défini ou au prochain endroit disponible.',
                 LANG_LCD_CLEAR: 'LCD : effacer',
-                LANG_LCD_CLEAR_TOOLTIP: 'Effacer l’écran LCD',
+                LANG_LCD_CLEAR_TOOLTIP: 'Effacer le contenu de l’écran LCD',
                 //controls blocks :
                 LANG_CATEGORY_CONTROLS: 'Contrôle',
                 LANG_CONTROLS_BASE_DELAY_WAIT: 'Attendre (ms)',
@@ -1995,8 +1995,8 @@
                 LANG_ADVANCED_MATH_RANDOM_TOOLTIP: 'Renvoie un chiffre aléatoire compris dans l’intervalle défini.',
                 //procedures blocks
                 LANG_CATEGORY_PROCEDURES: 'Fonctions',
-                LANG_PROCEDURES_RETURN: 'retourner',
-                LANG_PROCEDURES_RETURN_TOOLTIP: 'Retourner une valeur',
+                LANG_PROCEDURES_RETURN: 'renvoyer',
+                LANG_PROCEDURES_RETURN_TOOLTIP: 'Renvoyer une valeur',
                 LANG_PROCEDURES_CALL_WITHOUT_DEFINITION: 'Appel de fonction sans définition préalable de cette fonction',
                 LANG_PROCEDURES_DEFNORETURN_HELPURL: '',
                 LANG_PROCEDURES_DEFNORETURN_PROCEDURE: 'fonction_sans_renvoi',
@@ -2100,7 +2100,7 @@
                 LANG_SERVO_MOVE_PIN: 'BROCHE#',
                 LANG_SERVO_MOVE_DEGREES: 'Degrés (0~180)',
                 LANG_SERVO_MOVE_DELAY: 'Attendre [ms]',
-                LANG_SERVO_MOVE_TOOLTIP: 'Bouger le servo entre 0 et 180 degrés',
+                LANG_SERVO_MOVE_TOOLTIP: 'Tourner le servo entre 0 et 180 degrés',
                 LANG_SERVO_WARNING: 'Il n’est pas possible de déterminer la broche du servo à l’aide d’une variable'
             };
             // Node
