@@ -10,7 +10,7 @@ Blockly.Arduino.procedures_defnoreturn = function() {
     // Define a procedure with a return value.
     var funcName = this.getFieldValue('NAME');
     var branch = Blockly.Arduino.statementToCode(this, 'STACK');
-    branch = branch.replace(/&quot;/g, '"');
+    // branch = branch.replace(/&quot;/g, '"');
     if (Blockly.Arduino.INFINITE_LOOP_TRAP) {
         branch = Blockly.Arduino.INFINITE_LOOP_TRAP.replace(/%1/g, '\'' + this.id + '\'') + branch;
     }
@@ -24,7 +24,7 @@ Blockly.Arduino.procedures_defnoreturn = function() {
         'args': args,
         'branch': branch
     });
-    code=code.replace(/&amp;/g, '');
+    // code=code.replace(/&amp;/g, '');
 
     code = Blockly.Arduino.scrub_(this, code);
     Blockly.Arduino.definitions_[funcName] = code;

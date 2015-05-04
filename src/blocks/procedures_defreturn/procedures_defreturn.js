@@ -8,7 +8,7 @@ Blockly.Arduino.procedures_defreturn = function() {
     // Define a procedure with a return value.
     var funcName = this.getFieldValue('NAME');
     var branch = Blockly.Arduino.statementToCode(this, 'STACK');
-    branch = branch.replace(/&quot;/g, '"');
+    // branch = branch.replace(/&quot;/g, '"');
 
     if (Blockly.Arduino.INFINITE_LOOP_TRAP) {
         branch = Blockly.Arduino.INFINITE_LOOP_TRAP.replace(/%1/g, '\'' + this.id + '\'') + branch;
@@ -16,7 +16,7 @@ Blockly.Arduino.procedures_defreturn = function() {
     var returnValue = Blockly.Arduino.valueToCode(this, 'RETURN', Blockly.Arduino.ORDER_NONE) || '';
     var code = '';
 
-    returnValue = returnValue.replace(/&quot;/g, '"');
+    // returnValue = returnValue.replace(/&quot;/g, '"');
     var returnType = this.getReturnType();
     if (returnValue) {
         var a=RoboBlocks.findPinMode(returnValue);
@@ -31,7 +31,7 @@ Blockly.Arduino.procedures_defreturn = function() {
         'branch': branch,
         'returnValue': returnValue
     });
-    code=code.replace(/&amp;/g, '');
+    // code=code.replace(/&amp;/g, '');
 
     code = Blockly.Arduino.scrub_(this, code);
     Blockly.Arduino.definitions_[funcName] = code;

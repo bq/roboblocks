@@ -1,4 +1,4 @@
-/*! roboblocks - v0.2.3 - 2015-04-24
+/*! roboblocks - v0.2.3 - 2015-05-04
  * https://github.com/bq/roboblocks
  * Copyright (c) 2015 bq; Licensed  */
 
@@ -8553,7 +8553,7 @@
             // Define a procedure with a return value.
             var funcName = this.getFieldValue('NAME');
             var branch = Blockly.Arduino.statementToCode(this, 'STACK');
-            branch = branch.replace(/&quot;/g, '"');
+            // branch = branch.replace(/&quot;/g, '"');
             if (Blockly.Arduino.INFINITE_LOOP_TRAP) {
                 branch = Blockly.Arduino.INFINITE_LOOP_TRAP.replace(/%1/g, '\'' + this.id + '\'') + branch;
             }
@@ -8567,7 +8567,7 @@
                 'args': args,
                 'branch': branch
             });
-            code = code.replace(/&amp;/g, '');
+            // code=code.replace(/&amp;/g, '');
 
             code = Blockly.Arduino.scrub_(this, code);
             Blockly.Arduino.definitions_[funcName] = code;
@@ -8823,7 +8823,7 @@
             // Define a procedure with a return value.
             var funcName = this.getFieldValue('NAME');
             var branch = Blockly.Arduino.statementToCode(this, 'STACK');
-            branch = branch.replace(/&quot;/g, '"');
+            // branch = branch.replace(/&quot;/g, '"');
 
             if (Blockly.Arduino.INFINITE_LOOP_TRAP) {
                 branch = Blockly.Arduino.INFINITE_LOOP_TRAP.replace(/%1/g, '\'' + this.id + '\'') + branch;
@@ -8831,7 +8831,7 @@
             var returnValue = Blockly.Arduino.valueToCode(this, 'RETURN', Blockly.Arduino.ORDER_NONE) || '';
             var code = '';
 
-            returnValue = returnValue.replace(/&quot;/g, '"');
+            // returnValue = returnValue.replace(/&quot;/g, '"');
             var returnType = this.getReturnType();
             if (returnValue) {
                 var a = RoboBlocks.findPinMode(returnValue);
@@ -8846,7 +8846,7 @@
                 'branch': branch,
                 'returnValue': returnValue
             });
-            code = code.replace(/&amp;/g, '');
+            // code=code.replace(/&amp;/g, '');
 
             code = Blockly.Arduino.scrub_(this, code);
             Blockly.Arduino.definitions_[funcName] = code;
