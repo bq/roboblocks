@@ -6296,8 +6296,8 @@
             var n = 0;
             var argument = Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE);
             argument = argument.replace(/&quot;/g, '"');
-
             var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
+            branch = branch.replace(/&quot;/g, '"');
 
             var code = '';
             var a = RoboBlocks.findPinMode(argument);
@@ -6313,7 +6313,8 @@
             for (n = 1; n <= this.elseifCount_; n++) {
                 argument = Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE);
                 branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-                // branch=branch.replace(/&amp;/g, '');
+                branch = branch.replace(/&quot;/g, '"');
+
 
                 code += JST['controls_elseif']({
                     'argument': argument,
@@ -6322,7 +6323,7 @@
             }
             if (this.elseCount_) {
                 branch = Blockly.Arduino.statementToCode(this, 'ELSE');
-                // branch=branch.replace(/&amp;/g, '');
+                branch = branch.replace(/&quot;/g, '"');
 
                 code += JST['controls_else']({
                     'argument': argument,
@@ -8557,7 +8558,6 @@
             if (Blockly.Arduino.INFINITE_LOOP_TRAP) {
                 branch = Blockly.Arduino.INFINITE_LOOP_TRAP.replace(/%1/g, '\'' + this.id + '\'') + branch;
             }
-            // branch=branch.replace(/&amp;/g, '');
 
             var returnType = 'void';
             var args = this.paramString;
@@ -8567,7 +8567,7 @@
                 'args': args,
                 'branch': branch
             });
-            // code=code.replace(/&amp;/g, '');
+            code = code.replace(/amp;/g, '');
 
             code = Blockly.Arduino.scrub_(this, code);
             Blockly.Arduino.definitions_[funcName] = code;
@@ -8846,8 +8846,7 @@
                 'branch': branch,
                 'returnValue': returnValue
             });
-            // code=code.replace(/&amp;/g, '');
-
+            code = code.replace(/amp;/g, '');
             code = Blockly.Arduino.scrub_(this, code);
             Blockly.Arduino.definitions_[funcName] = code;
             return null;

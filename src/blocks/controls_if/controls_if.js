@@ -11,8 +11,8 @@ Blockly.Arduino.controls_if = function() {
     var n=0;
     var argument=Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE);
     argument=argument.replace(/&quot;/g,'"');
-
     var branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
+    branch = branch.replace(/&quot;/g, '"');
 
     var code = '';
     var a=RoboBlocks.findPinMode(argument);
@@ -28,7 +28,8 @@ Blockly.Arduino.controls_if = function() {
     for (n = 1; n <= this.elseifCount_; n++) {
         argument = Blockly.Arduino.valueToCode(this, 'IF' + n,Blockly.Arduino.ORDER_NONE);
         branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
-        // branch=branch.replace(/&amp;/g, '');
+        branch = branch.replace(/&quot;/g, '"');
+
 
         code += JST['controls_elseif']({
             'argument': argument,
@@ -37,7 +38,7 @@ Blockly.Arduino.controls_if = function() {
     }
     if (this.elseCount_) {
         branch = Blockly.Arduino.statementToCode(this, 'ELSE');
-        // branch=branch.replace(/&amp;/g, '');
+        branch = branch.replace(/&quot;/g, '"');
 
         code += JST['controls_else']({
             'argument': argument,
