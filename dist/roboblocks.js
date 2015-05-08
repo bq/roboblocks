@@ -1,4 +1,4 @@
-/*! roboblocks - v0.2.3 - 2015-05-04
+/*! roboblocks - v0.2.3 - 2015-05-08
  * https://github.com/bq/roboblocks
  * Copyright (c) 2015 bq; Licensed  */
 
@@ -7492,8 +7492,8 @@
          */
         Blockly.Arduino.logic_negate = function() {
             // Negation.
-            var order = Blockly.Arduino.ORDER_UNARY_PREFIX;
-            var argument0 = Blockly.Arduino.valueToCode(this, 'BOOL', order) || 'false';
+            var order = Blockly.Arduino.ORDER_NONE;
+            var argument0 = Blockly.Arduino.valueToCode(this, 'BOOL', order) || '';
             var code = '';
             var a = RoboBlocks.findPinMode(argument0);
             code += a['code'];
