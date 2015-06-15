@@ -27,10 +27,9 @@ Blockly.Arduino.controls_if = function() {
 
     for (n = 1; n <= this.elseifCount_; n++) {
         argument = Blockly.Arduino.valueToCode(this, 'IF' + n,Blockly.Arduino.ORDER_NONE);
+        argument=argument.replace(/&quot;/g,'"');
         branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
         branch = branch.replace(/&quot;/g, '"');
-
-
         code += JST['controls_elseif']({
             'argument': argument,
             'branch' : branch
@@ -44,6 +43,7 @@ Blockly.Arduino.controls_if = function() {
             'argument': argument,
             'branch' : branch
         });
+
     }
     branch=branch.replace(/&quot;/g,'"');
     code=code.replace(/&quot;/g,'"');

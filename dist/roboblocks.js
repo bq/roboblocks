@@ -1,4 +1,4 @@
-/*! roboblocks - v0.2.5 - 2015-05-19
+/*! roboblocks - v0.2.5 - 2015-06-15
  * https://github.com/bq/roboblocks
  * Copyright (c) 2015 bq; Licensed  */
 
@@ -6312,10 +6312,9 @@
 
             for (n = 1; n <= this.elseifCount_; n++) {
                 argument = Blockly.Arduino.valueToCode(this, 'IF' + n, Blockly.Arduino.ORDER_NONE);
+                argument = argument.replace(/&quot;/g, '"');
                 branch = Blockly.Arduino.statementToCode(this, 'DO' + n);
                 branch = branch.replace(/&quot;/g, '"');
-
-
                 code += JST['controls_elseif']({
                     'argument': argument,
                     'branch': branch
@@ -6329,6 +6328,7 @@
                     'argument': argument,
                     'branch': branch
                 });
+
             }
             branch = branch.replace(/&quot;/g, '"');
             code = code.replace(/&quot;/g, '"');
