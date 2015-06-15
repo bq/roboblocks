@@ -8888,6 +8888,7 @@
                         break;
                     }
                 }
+                console.log('returnValue', returnValue);
                 if (!returnValue) {
                     returnType = 'void';
                 }
@@ -8912,6 +8913,8 @@
                 } else if (this.isVariable(returnValue)) {
                     returnType = RoboBlocks.variables[returnValue][0];
                 } else if ((returnValue.search('analogRead') >= 0) || (returnValue.search('digitalRead') >= 0) || (returnValue.search('Distanc') >= 0) || (!isNaN(parseFloat(returnValue)) || (returnValue.search('random') >= 0)) || (returnValue.search('map') >= 0) || returnValue.search('\\[') >= 0 || (returnValue.search('abs') >= 0) || (returnValue.search('sqrt') >= 0) || (returnValue.search('log') >= 0) || (returnValue.search('log') >= 0) || (returnValue.search('exp') >= 0) || (returnValue.search('pow') >= 0)) {
+                    returnType = 'int';
+                } else if ((returnValue.search('\\+') >= 0) || (returnValue.search('\\-') >= 0) || (returnValue.search('\/') >= 0) || (returnValue.search('\\*') >= 0) || (returnValue.search('\\%') >= 0)) {
                     returnType = 'int';
                 } else if (returnValue.search('readJoystick') >= 0 || returnValue[0] === '{') {
                     returnType = 'int *';
