@@ -17,6 +17,15 @@ Blockly.Arduino.procedures_defnoreturn = function() {
 
     var returnType = 'void';
     var args = this.paramString;
+    if (args){
+        args = args.split(', ');
+        args.forEach(function(arg){
+            arg = arg.split(' ');
+            var varName = arg[1];
+            var varType = arg[0];
+            RoboBlocks.variables[varName] = [varType, 'local'];
+        });
+    }
     var code = JST['procedures_defnoreturn']({
         'returnType': returnType,
         'funcName': funcName,
@@ -70,6 +79,16 @@ Blockly.Blocks.procedures_defnoreturn = {
             params.push(this.type_arguments_[i] + ' ' + this.arguments_[i]);
         }
         this.paramString = params.join(', ');
+        var args = this.paramString;
+        if (args){
+            args = args.split(', ');
+            args.forEach(function(arg){
+                arg = arg.split(' ');
+                var varName = arg[1];
+                var varType = arg[0];
+                RoboBlocks.variables[varName] = [varType, 'local'];
+            });
+        }
         this.setFieldValue(this.paramString, 'PARAMS');
     },
     mutationToDom: function() {

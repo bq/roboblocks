@@ -1,4 +1,4 @@
-/*! roboblocks - v0.2.5 - 2015-06-15
+/*! roboblocks - v0.2.6 - 2015-06-15
  * https://github.com/bq/roboblocks
  * Copyright (c) 2015 bq; Licensed  */
 
@@ -8561,6 +8561,15 @@
 
             var returnType = 'void';
             var args = this.paramString;
+            if (args) {
+                args = args.split(', ');
+                args.forEach(function(arg) {
+                    arg = arg.split(' ');
+                    var varName = arg[1];
+                    var varType = arg[0];
+                    RoboBlocks.variables[varName] = [varType, 'local'];
+                });
+            }
             var code = JST['procedures_defnoreturn']({
                 'returnType': returnType,
                 'funcName': funcName,
@@ -8614,6 +8623,16 @@
                     params.push(this.type_arguments_[i] + ' ' + this.arguments_[i]);
                 }
                 this.paramString = params.join(', ');
+                var args = this.paramString;
+                if (args) {
+                    args = args.split(', ');
+                    args.forEach(function(arg) {
+                        arg = arg.split(' ');
+                        var varName = arg[1];
+                        var varType = arg[0];
+                        RoboBlocks.variables[varName] = [varType, 'local'];
+                    });
+                }
                 this.setFieldValue(this.paramString, 'PARAMS');
             },
             mutationToDom: function() {
@@ -8839,6 +8858,7 @@
                 returnValue += '  return ' + a['pin'] + ';\n';
             }
             var args = this.paramString;
+            console.log('args--->', args);
             if (args) {
                 args = args.split(', ');
                 args.forEach(function(arg) {
@@ -8848,6 +8868,7 @@
                     RoboBlocks.variables[varName] = [varType, 'local'];
                 });
             }
+            console.log('RoboBlocks.variables', RoboBlocks.variables);
             code += JST['procedures_defreturn']({
                 'returnType': returnType,
                 'funcName': funcName,

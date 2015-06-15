@@ -43,7 +43,6 @@ Blockly.Arduino.procedures_defreturn = function() {
     code = code.replace(/amp;/g, '');
     code = Blockly.Arduino.scrub_(this, code);
     Blockly.Arduino.definitions_[funcName] = code;
-    console.log('---------------->',Blockly.Arduino.definitions_);
     return null;
 };
 Blockly.Blocks.procedures_defreturn = {
@@ -105,7 +104,6 @@ Blockly.Blocks.procedures_defreturn = {
                 }
             }
         } else if (this.isVariable(returnValue)) {
-            console.log('RoboBlocks.variables', RoboBlocks.variables, returnValue);
             returnType = RoboBlocks.variables[returnValue][0];
         } else if ((returnValue.search('analogRead') >= 0) || (returnValue.search('digitalRead') >= 0) || (returnValue.search('Distanc') >= 0) || (!isNaN(parseFloat(returnValue)) || (returnValue.search('random') >= 0)) || (returnValue.search('map') >= 0) || returnValue.search('\\[') >= 0 || (returnValue.search('abs') >= 0) || (returnValue.search('sqrt') >= 0) || (returnValue.search('log') >= 0) || (returnValue.search('log') >= 0) || (returnValue.search('exp') >= 0) || (returnValue.search('pow') >= 0)) {
             returnType = 'int';
