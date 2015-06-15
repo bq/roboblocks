@@ -8839,15 +8839,15 @@
                 returnValue += '  return ' + a['pin'] + ';\n';
             }
             var args = this.paramString;
-            args = args.split(', ');
-            args.forEach(function(arg) {
-                arg = arg.split(' ');
-                // console.log('arg---->',arg);
-                var varName = arg[1];
-                var varType = arg[0];
-                // console.log('varName, varType',varType, varName);
-                RoboBlocks.variables[varName] = [varType, 'local'];
-            });
+            if (args) {
+                args = args.split(', ');
+                args.forEach(function(arg) {
+                    arg = arg.split(' ');
+                    var varName = arg[1];
+                    var varType = arg[0];
+                    RoboBlocks.variables[varName] = [varType, 'local'];
+                });
+            }
             code += JST['procedures_defreturn']({
                 'returnType': returnType,
                 'funcName': funcName,
