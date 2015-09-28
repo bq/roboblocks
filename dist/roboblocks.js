@@ -1,4 +1,4 @@
-/*! roboblocks - v0.2.6 - 2015-06-15
+/*! roboblocks - v0.2.6 - 2015-09-28
  * https://github.com/bq/roboblocks
  * Copyright (c) 2015 bq; Licensed  */
 
@@ -2635,7 +2635,7 @@
                 LANG_BQ_PHOTORESISTOR: 'Sensor de Luz',
                 LANG_BQ_PHOTORESISTOR_PIN: 'PIN#',
                 LANG_BQ_PHOTORESISTOR_TOOLTIP: 'Devolve o valor analógico medido pela foto-resistência.',
-                LANG_BQ_PIEZO_BUZZER: 'Cigarra',
+                LANG_BQ_PIEZO_BUZZER: 'Buzzer',
                 LANG_BQ_PIEZO_BUZZER_PIN: 'PIN#',
                 LANG_BQ_PIEZO_BUZZER_TONE: 'TOM',
                 LANG_BQ_PIEZO_BUZZER_DO: 'DO',
@@ -2646,12 +2646,12 @@
                 LANG_BQ_PIEZO_BUZZER_LA: 'LA',
                 LANG_BQ_PIEZO_BUZZER_SI: 'SI',
                 LANG_BQ_PIEZO_BUZZER_DURATION: 'Duração',
-                LANG_BQ_PIEZO_BUZZER_TOOLTIP: 'Cigarra - Elemento piezoeléctrico',
-                LANG_BQ_PIEZO_BUZZERAV: 'Cigarra avançado',
+                LANG_BQ_PIEZO_BUZZER_TOOLTIP: 'Buzzer - Elemento piezoeléctrico',
+                LANG_BQ_PIEZO_BUZZERAV: 'Buzzer avançado',
                 LANG_BQ_PIEZO_BUZZERAV_PIN: 'PIN#',
                 LANG_BQ_PIEZO_BUZZERAV_TONE: 'TOM',
                 LANG_BQ_PIEZO_BUZZERAV_DURATION: 'Duração',
-                LANG_BQ_PIEZO_BUZZERAV_TOOLTIP: 'Cigarra avançado',
+                LANG_BQ_PIEZO_BUZZERAV_TOOLTIP: 'Buzzer avançado',
                 LANG_BQ_POTENTIOMETER: 'Potenciômetro',
                 LANG_BQ_POTENTIOMETER_PIN: 'PIN#',
                 LANG_BQ_POTENTIOMETER_TOOLTIP: 'Devolve o valor analógico medido pelo Potenciômetro',
@@ -2825,22 +2825,22 @@
                 LANG_PROCEDURES_RETURN_TOOLTIP: 'Devolve um valor',
                 LANG_PROCEDURES_CALL_WITHOUT_DEFINITION: 'Chamada de uma função não definida.',
                 LANG_PROCEDURES_DEFNORETURN_HELPURL: '',
-                LANG_PROCEDURES_DEFNORETURN_PROCEDURE: 'função sem retorno',
+                LANG_PROCEDURES_DEFNORETURN_PROCEDURE: 'funcao sem retorno',
                 LANG_PROCEDURES_DEFNORETURN_DO: 'executar',
                 LANG_PROCEDURES_DEFNORETURN_TOOLTIP: 'função que se executa sem devolver nada.',
                 LANG_PROCEDURES_DEFRETURN_HELPURL: '',
-                LANG_PROCEDURES_DEFRETURN_PROCEDURE: 'função com retorno',
+                LANG_PROCEDURES_DEFRETURN_PROCEDURE: 'funcao com retorno',
                 LANG_PROCEDURES_DEFRETURN_DO: 'executar',
                 LANG_PROCEDURES_DEFRETURN_RETURN: 'Devolve',
                 LANG_PROCEDURES_DEFRETURN_TOOLTIP: 'função com valor de retorno.',
                 LANG_PROCEDURES_DEF_DUPLICATE_WARNING: 'Atenção: Esta função tem parâmetros duplicados.',
                 LANG_PROCEDURES_CALLNORETURN_HELPURL: '',
                 LANG_PROCEDURES_CALLNORETURN_CALL: 'executar',
-                LANG_PROCEDURES_CALLNORETURN_PROCEDURE: ' função sem retorno',
+                LANG_PROCEDURES_CALLNORETURN_PROCEDURE: ' funcao sem retorno',
                 LANG_PROCEDURES_CALLNORETURN_TOOLTIP: 'executa esta função.',
                 LANG_PROCEDURES_CALLRETURN_HELPURL: '',
                 LANG_PROCEDURES_CALLRETURN_CALL: 'executar',
-                LANG_PROCEDURES_CALLRETURN_PROCEDURE: ' função com retorno',
+                LANG_PROCEDURES_CALLRETURN_PROCEDURE: ' funcao com retorno',
                 LANG_PROCEDURES_CALLRETURN_TOOLTIP: 'executa esta função que tem valor de retorno.',
                 LANG_PROCEDURES_MUTATORCONTAINER_Field: 'parâmetros',
                 LANG_PROCEDURES_MUTATORARG_Field: 'variável:',
@@ -2892,7 +2892,7 @@
                 LANG_ZUM_PHOTORESISTOR: 'Sensor de Luz',
                 LANG_ZUM_PHOTORESISTOR_PIN: 'PIN#',
                 LANG_ZUM_PHOTORESISTOR_TOOLTIP: 'Devolve o valor analógico do sensor de luz (foto-resistência).',
-                LANG_ZUM_PIEZO_BUZZER: 'Cigarra',
+                LANG_ZUM_PIEZO_BUZZER: 'Buzzer',
                 LANG_ZUM_PIEZO_BUZZER_PIN: 'PIN#',
                 LANG_ZUM_PIEZO_BUZZER_TONE: 'TOM',
                 LANG_ZUM_PIEZO_BUZZER_DO: 'DO',
@@ -2903,12 +2903,12 @@
                 LANG_ZUM_PIEZO_BUZZER_LA: 'LA',
                 LANG_ZUM_PIEZO_BUZZER_SI: 'SI',
                 LANG_ZUM_PIEZO_BUZZER_DURATION: 'Duração',
-                LANG_ZUM_PIEZO_BUZZER_TOOLTIP: 'Cigarra',
-                LANG_ZUM_PIEZO_BUZZERAV: 'Cigarra avançado',
+                LANG_ZUM_PIEZO_BUZZER_TOOLTIP: 'Buzzer',
+                LANG_ZUM_PIEZO_BUZZERAV: 'Buzzer avançado',
                 LANG_ZUM_PIEZO_BUZZERAV_PIN: 'PIN#',
                 LANG_ZUM_PIEZO_BUZZERAV_TONE: 'TOM',
                 LANG_ZUM_PIEZO_BUZZERAV_DURATION: 'Duração',
-                LANG_ZUM_PIEZO_BUZZERAV_TOOLTIP: 'Cigarra - Elemento piezoelétrico avançado.',
+                LANG_ZUM_PIEZO_BUZZERAV_TOOLTIP: 'Buzzer - Elemento piezoelétrico avançado.',
                 LANG_ZUM_POTENTIOMETER: 'Potenciômetro',
                 LANG_ZUM_POTENTIOMETER_PIN: 'PIN#',
                 LANG_ZUM_POTENTIOMETER_TOOLTIP: 'Potenciômetro zum.',
@@ -8858,7 +8858,6 @@
                 returnValue += '  return ' + a['pin'] + ';\n';
             }
             var args = this.paramString;
-            console.log('args--->', args);
             if (args) {
                 args = args.split(', ');
                 args.forEach(function(arg) {
@@ -8868,7 +8867,6 @@
                     RoboBlocks.variables[varName] = [varType, 'local'];
                 });
             }
-            console.log('RoboBlocks.variables', RoboBlocks.variables);
             code += JST['procedures_defreturn']({
                 'returnType': returnType,
                 'funcName': funcName,
@@ -8879,7 +8877,6 @@
             code = code.replace(/amp;/g, '');
             code = Blockly.Arduino.scrub_(this, code);
             Blockly.Arduino.definitions_[funcName] = code;
-            console.log('---------------->', Blockly.Arduino.definitions_);
             return null;
         };
         Blockly.Blocks.procedures_defreturn = {
@@ -8941,7 +8938,6 @@
                         }
                     }
                 } else if (this.isVariable(returnValue)) {
-                    console.log('RoboBlocks.variables', RoboBlocks.variables, returnValue);
                     returnType = RoboBlocks.variables[returnValue][0];
                 } else if ((returnValue.search('analogRead') >= 0) || (returnValue.search('digitalRead') >= 0) || (returnValue.search('Distanc') >= 0) || (!isNaN(parseFloat(returnValue)) || (returnValue.search('random') >= 0)) || (returnValue.search('map') >= 0) || returnValue.search('\\[') >= 0 || (returnValue.search('abs') >= 0) || (returnValue.search('sqrt') >= 0) || (returnValue.search('log') >= 0) || (returnValue.search('log') >= 0) || (returnValue.search('exp') >= 0) || (returnValue.search('pow') >= 0)) {
                     returnType = 'int';
