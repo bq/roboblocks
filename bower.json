@@ -1,7 +1,7 @@
 {
   "name": "roboblocks",
   "description": "Blockly blocks repository used in bitbloq",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "main": "dist/roboblocks.min.js",
   "license": "MIT",
   "keywords": [
