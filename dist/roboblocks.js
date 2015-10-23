@@ -640,7 +640,10 @@
                 LANG_CONTROLS_WHILEUNTIL_OPERATOR_UNTIL: 'until',
                 LANG_CONTROLS_WHILEUNTIL_TOOLTIP_WHILE: 'While the condition is true, then do the statements.',
                 LANG_CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL: 'While the condition is false, then do the statements.',
-                LANG_CONTROLS_REPEAT_TITLE_REPEAT: 'Repeat',
+                LANG_CONTROLS_DOWHILEUNTIL_OPERATOR_WHILE: 'while',
+                LANG_CONTROLS_DOWHILEUNTIL_OPERATOR_UNTIL: 'until',
+                LANG_CONTROLS_DOWHILEUNTIL_TOOLTIP_WHILE: 'Do the statements while the condition is true.',
+                LANG_CONTROLS_DOWHILEUNTIL_TOOLTIP_UNTIL: 'Do the statements While the condition is false.',                LANG_CONTROLS_REPEAT_TITLE_REPEAT: 'Repeat',
                 LANG_CONTROLS_REPEAT_TITLE_TIMES: 'times',
                 LANG_CONTROLS_REPEAT_INPUT_DO: 'do',
                 LANG_CONTROLS_REPEAT_TOOLTIP: 'Repeat the statements a certain number of times',
@@ -3115,6 +3118,10 @@
                 LANG_CONTROLS_WHILEUNTIL_OPERATOR_UNTIL: 'Aż do',
                 LANG_CONTROLS_WHILEUNTIL_TOOLTIP_WHILE: 'Dopóki warunek jest spełniony dopóty powtarzaj wykonanie bloku poleceń.',
                 LANG_CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL: 'Dopóki warunek nie jest spełniony dopóty powtarzaj wykonanie bloku poleceń.',
+                LANG_CONTROLS_DOWHILEUNTIL_OPERATOR_WHILE: 'dopóki',
+                LANG_CONTROLS_DOWHILEUNTIL_OPERATOR_UNTIL: 'aż do',
+                LANG_CONTROLS_DOWHILEUNTIL_TOOLTIP_WHILE: 'Powtarzaj wykonanie bloku poleceń dopóki warunek jest spełniony.',
+                LANG_CONTROLS_DOWHILEUNTIL_TOOLTIP_UNTIL: 'Powtarzaj wykonanie bloku poleceń dopóki warunek nie jest spełniony.',
                 LANG_CONTROLS_REPEAT_TITLE_REPEAT: 'Powtórz',
                 LANG_CONTROLS_REPEAT_TITLE_TIMES: 'razy',
                 LANG_CONTROLS_REPEAT_INPUT_DO: 'wykonaj',
@@ -4462,6 +4469,20 @@
             return __p
         };
 
+        this["JST"]["controls_doWhileUntil"] = function(obj) {
+            obj || (obj = {});
+            var __t, __p = '',
+                __e = _.escape;
+            with(obj) {
+                __p += 'do {\n' +
+                    __e(branch) +
+                    '\n} while (' +
+                    __e(argument0) +
+                    ')\n';
+            }
+            return __p
+        };
+        
         this["JST"]["inout_analog_read"] = function(obj) {
             obj || (obj = {});
             var __t, __p = '',
@@ -6527,7 +6548,8 @@
                     if (block.type === 'controls_repeat' ||
                         block.type === 'controls_forEach' ||
                         block.type === 'controls_for' ||
-                        block.type === 'controls_whileUntil') {
+                        block.type === 'controls_whileUntil' ||
+                        block.type === 'controls_doWhileUntil') {
                         legal = true;
                         break;
                     }
@@ -7272,6 +7294,69 @@
         Blockly.Blocks.controls_whileUntil.TOOLTIPS = {
             WHILE: RoboBlocks.locales.getKey('LANG_CONTROLS_WHILEUNTIL_TOOLTIP_WHILE'),
             UNTIL: RoboBlocks.locales.getKey('LANG_CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL')
+        };
+        // Source: src/blocks/controls_doWhileUntil/controls_doWhileUntil.js
+        /* global Blockly, JST, RoboBlocks */
+        /* jshint sub:true */
+        /**
+         * controls_doWhileUntil code generation
+         * @return {String} Code generated with block parameters
+         */
+
+        Blockly.Arduino.controls_doWhileUntil = function() {
+            // Do loop while/until.
+            var argument0 = Blockly.Arduino.valueToCode(this, 'BOOL', Blockly.Arduino.ORDER_NONE) || '';
+            argument0 = argument0.replace(/&quot;/g, '"');
+            var branch = Blockly.Arduino.statementToCode(this, 'DO');
+            branch = branch.replace(/&quot;/g, '"');
+
+            var code = '';
+            var a = RoboBlocks.findPinMode(argument0);
+            code += a['code'];
+            argument0 = a['pin'];
+
+            if (Blockly.Arduino.INFINITE_LOOP_TRAP) {
+                branch = Blockly.Arduino.INFINITE_LOOP_TRAP.replace(/%1/g, '\'' + this.id + '\'') + branch;
+                // branch = branch.substring(0, branch.length - 2);
+            }
+            // branch=branch.replace(/&amp;/g, '');
+
+            if (this.getFieldValue('MODE') === 'UNTIL') {
+                if (!argument0.match(/^\w+$/)) {
+                    argument0 = '(' + argument0 + ')';
+                }
+                argument0 = '!' + argument0;
+            }
+            code += JST['controls_doWhileUntil']({
+                'argument0': argument0,
+                'branch': branch
+            });
+            return code;
+        };
+        Blockly.Blocks.controls_doWhileUntil = {
+            // Do loop while/until.
+            category: RoboBlocks.locales.getKey('LANG_CATEGORY_CONTROLS'),
+            helpUrl: RoboBlocks.GITHUB_SRC_URL + 'blocks/controls_doWhileUntil',
+            init: function() {
+                this.setColour(RoboBlocks.LANG_COLOUR_CONTROL);
+                this.appendStatementInput('DO').appendField(RoboBlocks.locales.getKey('LANG_CONTROLS_DOWHILEUNTIL_INPUT_DO'));
+                this.appendValueInput('BOOL').setCheck(Boolean).appendField(RoboBlocks.locales.getKey('LANG_CONTROLS_DOWHILEUNTIL_TITLE_REPEAT')).appendField(new Blockly.FieldDropdown([
+                    [RoboBlocks.locales.getKey('LANG_CONTROLS_DOWHILEUNTIL_OPERATOR_WHILE'), 'WHILE'],
+                    [RoboBlocks.locales.getKey('LANG_CONTROLS_DOWHILEUNTIL_OPERATOR_UNTIL'), 'UNTIL']
+                ]), 'MODE');
+                this.setPreviousStatement(true);
+                this.setNextStatement(true);
+                // Assign 'this' to a variable for use in the tooltip closure below.
+                var thisBlock = this;
+                this.setTooltip(function() {
+                    var op = thisBlock.getFieldValue('MODE');
+                    return Blockly.Blocks.controls_doWhileUntil.TOOLTIPS[op];
+                });
+            }
+        };
+        Blockly.Blocks.controls_doWhileUntil.TOOLTIPS = {
+            WHILE: RoboBlocks.locales.getKey('LANG_CONTROLS_DOWHILEUNTIL_TOOLTIP_WHILE'),
+            UNTIL: RoboBlocks.locales.getKey('LANG_CONTROLS_DOWHILEUNTIL_TOOLTIP_UNTIL')
         };
         // Source: src/blocks/inout_analog_read/inout_analog_read.js
         /* global Blockly, JST, RoboBlocks */
