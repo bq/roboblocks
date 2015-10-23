@@ -48,6 +48,7 @@ RoboBlocks.URL_SERIE='http://diwo.bq.com/comunicacion-puerto-serie-en-windows-7/
 RoboBlocks.URL_IF='http://diwo.bq.com/programando-los-bloques-de-control-el-bloque-si-ejecutar/';
 RoboBlocks.URL_SWITCH='http://diwo.bq.com/programando-los-bloques-de-control-el-bloque-si-switch-case/';
 RoboBlocks.URL_WHILE='http://diwo.bq.com/programando-los-bloques-de-control-el-bloque-mientras/';
+RoboBlocks.URL_DOWHILE='https://en.wikipedia.org/wiki/Do_while_loop';
 RoboBlocks.URL_FOR='http://diwo.bq.com/programando-los-bloques-de-control-el-bloque-contar/';
 RoboBlocks.URL_FLOW_STATEMENTS='http://diwo.bq.com/programando-los-bloques-de-control-interrumpir/';
 RoboBlocks.URL_LOGIC='http://diwo.bq.com/programando-los-bloques-logicos/';
